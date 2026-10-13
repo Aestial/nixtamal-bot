@@ -164,6 +164,17 @@
     zed-editor
   ];
 
+  # Environment variables
+  environment.variables = {
+    SSH_ASKPASS_REQUIRE = "prefer";
+  };
+ 
+  # Start SSH Agent on boot
+  programs.ssh = {
+    startAgent = true;
+    enableAskPassword = true;
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
